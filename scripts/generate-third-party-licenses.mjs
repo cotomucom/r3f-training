@@ -190,7 +190,7 @@ const generatedDate = new Date().toISOString().slice(0, 10);
 const lines = [];
 lines.push("# Third-Party Notices");
 lines.push("");
-lines.push("このファイルは、`threejs-inv` で利用している第三者ライブラリのライセンス情報をまとめたものです。");
+lines.push("このファイルは、`r3f-training` で利用している第三者ライブラリのライセンス情報をまとめたものです。");
 lines.push("");
 lines.push("## 重要事項");
 lines.push("- 本リポジトリ内の自作部分には `LICENSE` が適用されます。");
