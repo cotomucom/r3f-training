@@ -16,20 +16,26 @@ React 初学者向けに、`three.js` と `@react-three/fiber` を使った段�
 npm install
 npm run dev
 ```
-## 教材マークダウンファイル
+## 学習内容
 
-- `docs/course/00_environment.md`
-- `docs/course/01_min_scene.md`
-- `docs/course/02_selection.md`
-- `docs/course/03_drag.md`
-- `docs/course/04_rotate_delete.md`
-- `docs/course/05_camera_controls.md`
-- `docs/course/06_gltf_loader.md`
-- `docs/course/07_threejs_comparison.md`
+### Chapter 0 — three.js と R3F の役割を理解する
+コードは書きません。three.js が担当する「描画」と、React が担当する「状態管理」の境界線を把握します。この理解がないまま先に進むと、どこに何を書けばいいのか迷子になります。
 
-## 要素ごと比較ページ
+### Chapter 1 — 最小のシーンを表示する
+`Canvas` コンポーネントとライティングの基本を学び、state に持ったオブジェクト配列から立方体を描画します。ここで初めてブラウザに 3D が映ります。
 
-- `src/pages/ThreeVanilla.tsx`
-- `src/pages/R3FCore.tsx`
-- `src/pages/R3FDrei.tsx`
-- 要素比較(ブラウザ上への表示なし): `docs/course/COMPARISON.md`
+### Chapter 2 — クリックで選択する
+立方体をクリックして「どれが操作対象か」を決める仕組みを作ります。イベント伝播の制御と、選択状態の視覚フィードバックを実装します。
+
+### Chapter 3 — 回転と削除
+選択中のオブジェクトをボタンで回転・削除する機能を追加します。`map` と `filter` によるイミュータブルな state 更新パターンを身につけます。
+
+### Chapter 4 — drei を導入する（カメラとドラッグ）
+`@react-three/drei` の `OrbitControls` でカメラ操作を、`TransformControls` でオブジェクトのドラッグ移動・回転を追加します。drei と three.js のオブジェクト参照の橋渡しや、操作結果を state に同期するパターンを学びます。
+
+### Chapter 5 — 3Dモデルを読み込む
+drei の `useGLTF` を使って外部の 3D モデルファイルを表示し、既存の選択・操作システムに統合します。「読み込み」と「操作対象化」は別の問題であることを理解します。
+
+### Chapter 6 — three.js 単体と比較する
+ここまで R3F + drei で実装してきた機能を、three.js 単体で書いた場合と比較します。同じ結果を得るために、それぞれのアプローチでどんな責務を負う必要があるのかを整理します。
+
